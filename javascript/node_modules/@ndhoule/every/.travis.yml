@@ -1,0 +1,28 @@
+# http://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure/
+sudo: false
+addons:
+  sauce_connect: true
+language: node_js
+script: make test
+node_js:
+- '0.10'
+before_install:
+  npm install -g npm@'>=2.7.0'
+matrix:
+  include:
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=41
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=41
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=36
+  - env: BROWSER_NAME=chrome BROWSER_VERSION=35
+  - env: BROWSER_NAME=ie BROWSER_VERSION=6
+  - env: BROWSER_NAME=ie BROWSER_VERSION=7
+  - env: BROWSER_NAME=ie BROWSER_VERSION=8
+  - env: BROWSER_NAME=ie BROWSER_VERSION=9
+  - env: BROWSER_NAME=ie BROWSER_VERSION=10
+  - env: BROWSER_NAME=ie BROWSER_VERSION=11
+  - env: BROWSER_NAME=safari BROWSER_VERSION=8
+  - env: BROWSER_NAME=safari BROWSER_VERSION=7
+env:
+  global:
+    - secure: "eRvsa48TrfvCRstIYZZmJcEE2ABCZz9uE07e+XDbvrGEoBADFhUr0QLiAKyprhxO3bjufKgsD0bkzmtA/gF+GSI88hKvwdTCyzaVIQjFW1WpF83c5z5/onIonz3cMop44/TlnEilhLolrgIXVN4MgxV0OUbquX1Zyu+OjIkyQmMooDZneUPZUJT1I0jzL9R/P7oeH58YWH+fw2SNnf/LB8NTe/2FF+Bar+o809XwHiiErdt5u3bJ9UaeHgrlEbkP/xxqs39+zixf3H3b7HUCEnP6/2jaaz89vMn58VXjZtGPl51rDiPhH+YRNrW6Nk8ictqjuWRO6/YX+vGRdTZyxtcxNtRkCFOdOnVHfvejXW1LxbHHi8p/l46oUBx2ATdmoCPlKalxiRQpniXxWu0ofcleBQ3iR2esSjg6A47YpuQHZBNvdmYeuiPYzMz+cAj8k1hdCxWGXO7AQAnNL6et8pxH1yr5BZ0C35+h6mQsQ+ftdVO46tJJRAdIt6mMO6Vta+m3/u7emu/6diE2JzQM5ux5HqqwxilEfweaKHIklNCjrOTHhclifCiPKJqoa8vL3WZO7v5n3p0CtmB8BRP0i29buQM+8/GmfiTdRj5uWqm4TgPbix4frhIdebIn1Hv4ux/eH3we3SqNIYkrRqMi9HYAzi5aXsLNP1nqF0btCTU="
+    - secure: "h6eBapSp3qP7doRslXbjkPjyav3OYwrc9jSQvijctcecvVyebsV6DZHllRODuIhPF3JEpGRz3UxN5DDWHF6lgFB27wQfwALxOzKjW0SYyCUfmCdl1dEgcigCoalCTSXJdHp+UNOJU5Cbt1a56MRQKkBjscTnuelTvS4/uxtFMm50Er8HIEFqmbJfxaMdFw3VoROQfKMaZYkaTgUOcAGA9qrWhR7GaSG51/c+Jv6C3EgHFcTZgfmesvYfAscf8Ex5T7RiPmz8mjvU9rECtNH3zU+OXBoik4fy6/DAgLFdZ1DGrIfegnQxXx5c1g9hzHw8IHOQTxvpeBcdsRF+1/juplWmhfCds+JjZM1qROMKVgjSaEIaf6ftMJi6SbMlBM+32cl90c3xrVmSGjrUc5TQOKe6NOZmTX5UMO8JU//UxtGfV72JwRyuQ67F/0woLaE0UJh/bH6YAiHMIlwxvRn7p7zMyvi92HE6MSrpYapFq8BqR6VdVjUMtr3a338RZn+6qwzL41MWLOz5QcDPzivsWo4o6yIwtRkTD8nJN9ZBtd3R1REAhCcu/19BB0K4nWpyCVYFptm5EBddVGDua7mDbaKWKVwo20NyGCldZX6XwMm15Qi9R0JqJDab3hicbpodDNSkOcdE0125w9tJs0G0OCdvCGPHfsStqAALkAaJMIs="
